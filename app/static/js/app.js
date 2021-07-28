@@ -149,7 +149,7 @@ function PermitsSpline() {
             text: 'New Housing Permits & Housing Units Constructed'
         },
         xaxis: {
-            categories: date_units_constructed,
+            categories: date,
             title: {
                 text: 'Date',
                 offsetX: -40
