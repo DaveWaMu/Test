@@ -7,7 +7,7 @@ from flask import (
     jsonify,
     request,
     redirect)
-# from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 
 import sqlalchemy as SQLAlchemy
 from sqlalchemy.ext.automap import automap_base
