@@ -2,31 +2,31 @@
 
 function buildlinePlot() {
 
-  const url = "/api/average_home_price";
-  d3.json(url).then(function(myData) {
-   console.log(myData);
-    
-    var date = myData[0].Date;
-    
-    var price = myData[0].Average_Home_Price;
-   
+    const url = "/api/average_home_price";
+    d3.json(url).then(function (myData) {
+        console.log(myData);
 
-    var trace1 = {
-    x: date,
-    y: price,
-    type: "scatter"
-    
-    }
-    var data = [trace1];
-    
+        var date = myData[0].Date;
 
-    var layout = {
-        title: "Average Home Price", 
-    }
-    
+        var price = myData[0].Average_Home_Price;
 
-    Plotly.newPlot("line", data, layout);
-})
+
+        var trace1 = {
+            x: date,
+            y: price,
+            type: "scatter"
+
+        }
+        var data = [trace1];
+
+
+        var layout = {
+            title: "Average Home Price",
+        }
+
+
+        Plotly.newPlot("line", data, layout);
+    })
 };
 
 buildlinePlot();
@@ -37,14 +37,14 @@ buildlinePlot();
 // Homeownership Rate Radial Chart
 function RadialChart() {
 
-//     var date = [];
+    //     var date = [];
     var homeownership_rate = [];
 
     const url = "/api/homeownership_rate";
-    d3.json(url).then(function(d) {
+    d3.json(url).then(function (d) {
         console.log("Homeownership Rate API", d);
-//         date = d[0].Date;
-//         console.log(date);
+        //         date = d[0].Date;
+        //         console.log(date);
         homeownership_rate = d[0].Home_Ownership_Rate;
         console.log("Homeownership Rate Array", homeownership_rate);
 
@@ -109,7 +109,7 @@ RadialChart();
 
 //New Housing Permits & Housing Units Constructed Spline
 function PermitsSpline() {
-  
+
     var date = [];
     var units_constructed = [];
     var new_permits = [];
@@ -177,3 +177,4 @@ function PermitsSpline() {
     chart.render();
 }
 PermitsSpline();
+
