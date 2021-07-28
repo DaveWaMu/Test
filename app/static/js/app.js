@@ -113,6 +113,7 @@ function PermitsSpline() {
     var date = [];
     var units_constructed = [];
     var new_permits = [];
+    console.log("Empty Arrays", date, units_constructed, new_permits);
 
     const url = "/api/home_units";
     d3.json(url).then(function (d) {
@@ -133,10 +134,10 @@ function PermitsSpline() {
     var options = {
         series: [{
             name: 'New Housing Permits',
-            data: new_permits
+            data: [new_permits]
         }, {
             name: 'Housing Units Constructed',
-            data: units_constructed
+            data: [units_constructed]
         }],
         chart: {
             // height: 350,
@@ -152,7 +153,7 @@ function PermitsSpline() {
             text: 'New Housing Permits & Housing Units Constructed'
         },
         xaxis: {
-            categories: date,
+            categories: [date],
             title: {
                 text: 'Date',
                 offsetX: -40
