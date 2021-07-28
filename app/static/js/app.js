@@ -37,25 +37,28 @@ buildlinePlot();
 // Homeownership Rate Radial Chart
 function RadialChart() {
 
+    var date = [];
+    var homeownership_rate = [];
+
     const url = "/api/homeownership_rate";
     d3.json(url).then(function(d) {
         console.log(d);
-        var date = d[0].date;
-        console.log(date);
-        var homeownership_rate = d[0].homeownership_rate;
+        date = d[0].date;
+        console.log(Date);
+        homeownership_rate = d[0].Home_Ownership_Rate;
         console.log(homeownership_rate);
 
 
         // Series function
-        function SeriesValue() {
-            for (var i = 0; i < date.length; i++) {
-                console.log(date[i]);
-                console.log(homeownership_rate[i]);
-                if (d3.select(this.value) == date[i]) {
-                    return homeownership_rate[i];
-                }
-            }
-        }
+        // function SeriesValue() {
+        //     for (var i = 0; i < date.length; i++) {
+        //         console.log(date[i]);
+        //         console.log(homeownership_rate[i]);
+        //         if (d3.select(this.value) == date[i]) {
+        //             return homeownership_rate[i];
+        //         }
+        //     }
+        // }
 
         var options = {
             chart: {
@@ -63,7 +66,7 @@ function RadialChart() {
                 type: "radialBar"
             },
 
-            series: [SeriesValue()],
+            series: [homeownership_rate[4]],
 
             plotOptions: {
                 radialBar: {
@@ -102,7 +105,6 @@ function RadialChart() {
         chart.render();
     });
 }
-
 RadialChart();
 
 //New Housing Permits & Housing Units Constructed Spline
@@ -114,16 +116,16 @@ function PermitsSpline() {
     const url = "/api/home_units";
     d3.json(url).then(function (d) {
         console.log(d);
-        date = d[0].date;
+        date = d[0].Date;
         console.log(date);
-        units_constructed = d[0].units_constructed_thousands;
+        units_constructed = d[0].Home_Unites_Contructed;
         console.log(units_constructed);
     });
 
     const apiurl = "/api/house_permits";
     d3.json(apiurl).then(function (d) {
         console.log(d);
-        new_permits = d[0].new_permits_thousands;
+        new_permits = d[0].New_Home_Permits;
         console.log(new_permits);
     });
 
@@ -174,60 +176,3 @@ function PermitsSpline() {
     chart.render();
 }
 PermitsSpline();
-
-
-
-
-
-  
-  // New Housing Permits Line Chart
-  var options = {
-    chart: {
-      type: 'line'
-    },
-    series: [{
-      name: 'New Housing Permits',
-      data: [116.4,102.9,119.0,98.4,107.3,127.2,138.9,128.9,136.3,135.9,123.1,137.0,128.8,120.1,157.6,157.9,142.3]
-    }],
-    xaxis: {
-      categories: ['2020-01-01','2020-02-01','2020-03-01','2020-04-01','2020-05-01',
-      '2020-06-01','2020-07-01','2020-08-01','2020-09-01','2020-10-01','2020-11-01','2020-12-01',
-    '2021-01-01','2021-02-01','2021-03-01','2021-04-01','2021-05-01']
-    },
-    responsive: [{
-      breakpoint: undefined,
-      options: {},
-    }]
-  }
-  
-  var chart = new ApexCharts(document.querySelector("#permits"), options);
-  
-  // chart.render();
-  
-  
-  // Units Completed-Constructed Line Chart
-  var options = {
-    chart: {
-      type: 'line'
-    },
-    series: [{
-      name: 'Housing Units Constructed',
-      data: [90.2,90.8,101.7,94.6,98.5,110.7,117.1,111.2,121.1,120.8,99.8,130.5,93.7,94.6,120.5,113.0,114.0]
-    }],
-    xaxis: {
-      categories: ['2020-01-01','2020-02-01','2020-03-01','2020-04-01','2020-05-01',
-      '2020-06-01','2020-07-01','2020-08-01','2020-09-01','2020-10-01','2020-11-01','2020-12-01',
-    '2021-01-01','2021-02-01','2021-03-01','2021-04-01','2021-05-01']
-    },
-    responsive: [{
-      breakpoint: undefined,
-      options: {},
-    }]
-  }
-  
-  var chart = new ApexCharts(document.querySelector("#constructed"), options);
-  
-  // chart.render();
-  
-  
-
