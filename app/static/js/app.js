@@ -37,16 +37,16 @@ buildlinePlot();
 // Homeownership Rate Radial Chart
 function RadialChart() {
 
-    var date = [];
+//     var date = [];
     var homeownership_rate = [];
 
     const url = "/api/homeownership_rate";
     d3.json(url).then(function(d) {
-        console.log(d);
-        date = d[0].Date;
-        console.log(date);
+        console.log("Homeownership Rate API", d);
+//         date = d[0].Date;
+//         console.log(date);
         homeownership_rate = d[0].Home_Ownership_Rate;
-        console.log(homeownership_rate);
+        console.log("Homeownership Rate Array", homeownership_rate);
 
 
         // Series function
@@ -109,24 +109,25 @@ RadialChart();
 
 //New Housing Permits & Housing Units Constructed Spline
 function PermitsSpline() {
+  
     var date = [];
     var units_constructed = [];
     var new_permits = [];
 
     const url = "/api/home_units";
     d3.json(url).then(function (d) {
-        console.log(d);
+        console.log("Home Units API", d);
         date = d[0].Date;
-        console.log(date);
+        console.log("Date", date);
         units_constructed = d[0].Home_Unites_Contructed;
-        console.log(units_constructed);
+        console.log("Home Units Array", units_constructed);
     });
 
     const apiurl = "/api/house_permits";
     d3.json(apiurl).then(function (d) {
-        console.log(d);
+        console.log("House Permits API", d);
         new_permits = d[0].New_Home_Permits;
-        console.log(new_permits);
+        console.log("House Permits Array", new_permits);
     });
 
     var options = {
