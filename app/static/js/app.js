@@ -43,8 +43,8 @@ function RadialChart() {
     const url = "/api/homeownership_rate";
     d3.json(url).then(function(d) {
         console.log(d);
-        date = d[0].date;
-        console.log(Date);
+        date = d[0].Date;
+        console.log(date);
         homeownership_rate = d[0].Home_Ownership_Rate;
         console.log(homeownership_rate);
 
