@@ -174,7 +174,9 @@ function PermitsSpline() {
     };
 
     var chart = new ApexCharts(document.querySelector("#permitsConstructed"), options);
-
+    
+    console.log("Empty Arrays", date, units_constructed, new_permits);
+    
     chart.render();
 }
 PermitsSpline();
