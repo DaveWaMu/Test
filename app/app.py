@@ -9,13 +9,12 @@ from flask import (
     redirect)
 from flask_sqlalchemy import SQLAlchemy
 
-import sqlalchemy as SQLAlchemy
+import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 
 import psycopg2
-
 #################################################
 # Flask Setup
 #################################################
