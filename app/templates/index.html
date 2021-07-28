@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>What is affecting the housing market?</title>
+  <!---CSS--->
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <!--APEX Charts-->
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>What Is Affecting The Housing Market? </h1>
+        <p>Use the interactive charts below to explore the datasets</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Time Frame:.:</h5>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">insert table here </h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+          
+        </div>
+      </div>
+
+      <!---My Stuff--->
+      <!---Homeownership Rate Radial Chart--->
+      <div id="homeownership" class="container-fluid"></div>
+      <!---New Housing Permits & Housing Units Constructed Spline--->
+      <div id="permitsConstructed" class="container-fluid"></div>
+
+      <div id="synced-charts">
+        <div id="chart-line"></div>
+        <div id="chart-area"></div>
+      </div>
+
+      <div class="col-md-5">
+        <div id="line"></div>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+
+  <!--D3-->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <!--plotly-->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!--Math.js Library-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.1.0/math.min.js"></script>
+  <!--javaScript-->
+  <script src="../static/js/app.js"></script>
+  <!--Bootstrap Bundle Script-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" 
+  integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" 
+  crossorigin="anonymous"></script>
+</body>
+
+</html>
