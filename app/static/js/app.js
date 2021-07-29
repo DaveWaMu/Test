@@ -170,7 +170,7 @@ function PermitsSpline() {
                     data: units_constructed
                 }],
                 chart: {
-                    height: 350,
+                    height: 400,
                     type: 'area'
                 },
                 dataLabels: {
