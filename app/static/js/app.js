@@ -170,7 +170,7 @@ function PermitsSpline() {
                     data: units_constructed
                 }],
                 chart: {
-                    // height: 350,
+                    height: 350,
                     type: 'area'
                 },
                 dataLabels: {
@@ -185,8 +185,8 @@ function PermitsSpline() {
                 xaxis: {
                     categories: date,
                     title: {
-                        text: 'Date',
-                        offsetX: -40
+                        text: 'Date'
+                        // offsetX: -40
                     }
                     // type: 'datetime',
                     // categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
@@ -211,3 +211,33 @@ function PermitsSpline() {
 }
 PermitsSpline();
 
+function buildareaPlot() {
+
+    const url = "/api/monthly_house_supply";
+    d3.json(url).then(function (myData) {
+        console.log(myData);
+
+        var date = myData[0].Date;
+
+        var ratio = myData[0].Ratio_of_Sale_Sold;
+
+
+        var trace1 = {
+            x: date,
+            y: ratio,
+            type: "area"
+
+        }
+        var data = [trace1];
+
+
+        var layout = {
+            title: "Ratio for Sales to Sold",
+        }
+
+
+        Plotly.newPlot("area", data, layout);
+    })
+};
+
+buildareaPlot();

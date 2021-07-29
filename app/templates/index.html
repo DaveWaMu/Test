@@ -15,10 +15,9 @@
 </head>
 
 <body>
-
-<!-- Jumbotron -->
+  <!-- Jumbotron -->
   <div class="container-fluid">
-    <div class="jumbotron jumbotron text-center" id="jumbotron">
+    <div class="jumbotron text-center" id="jumbotron">
       <h1 class="display-4">What Is Affecting The Housing Market?</h1>
       <p class="lead">Use the interactive charts below to explore the datasets.</p>
       <hr>
@@ -48,22 +47,31 @@
       </div>
     </div> -->
 
-  <!-- Home price plot -->
   <div class="container-fluid">
+    <!-- Home Construction Materials plot -->
     <div class="row">
-      <div class="col-xs-9 col-sm-9 col-md-9">
+      <div class="col-md-9">
+        <div id="commodities"></div>
+      </div>
+    </div>
+    <!---Homeownership Rate Radial Chart--->
+    <div class="row">
+      <div class="col-3">
+        <div id="homeownership"></div>
+      </div>
+    </div>
+    <!-- Home price plot -->
+    <div class="row">
+      <div class="col-md-12">
         <div id="line"></div>
       </div>
-      <!---Homeownership Rate Radial Chart--->
-        <div id="homeownership" class="col-3"></div>
+    <!-- Monthly ratio for sales to sold -->
+    <div class="row">
+      <div class="col-md-12">
+        <div id="area"></div>
+      </div>
     </div>
   </div>
-
-  <!-- Home Construction Materials plot -->
-  <div class="container-fluid">
-    <div id="commodities"></div>
-  </div>
-
   <!---New Housing Permits & Housing Units Constructed Spline--->
   <div id="permitsConstructed" class="container-fluid"></div>
 
